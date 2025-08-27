@@ -57,15 +57,9 @@ public class MemberController {
 		
 		if( result.hasErrors()) { // result 내에 error가 1개라도 있우묜 true
 			System.out.println(result.getFieldErrorCount()); 
-			// 에러 발생 갯수
-			//FieldError fieldError = result.getFieldError("id");
-			// 해당(id) 필드의 에러 내용을 가져오기
-			//System.out.println(fieldError.getCode());
-			// 해당 필드의 에러 코드를 가져오기
 			
 			List<FieldError> fieldErrors = result.getFieldErrors();
 			String errorMsg = null;
-			// 모든 에러를 list로 반환
 			for (FieldError fieldError2 : fieldErrors) {
 				System.out.println("에러가 발생한 항목 : " + fieldError2.getField());
 				System.out.println("에러가 발생한 코드명 : " + fieldError2.getCode());
